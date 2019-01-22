@@ -1,6 +1,8 @@
-import { forwardRef, Component, Input } from '@angular/core';
+import { forwardRef, ChangeDetectorRef, Component, Input } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
+import { DateHelperService } from '../i18n/date-helper.service';
+import { NzI18nService } from '../i18n/nz-i18n.service';
 import { HeaderPickerComponent, SupportHeaderPanel } from './header-picker.component';
 
 @Component({
@@ -20,4 +22,8 @@ export class NzMonthPickerComponent extends HeaderPickerComponent {
   @Input() nzFormat: string = 'yyyy-MM';
 
   endPanelMode: SupportHeaderPanel = 'month';
+
+  constructor(i18n: NzI18nService, cdr: ChangeDetectorRef, dateHelper: DateHelperService) {
+    super(i18n, cdr, dateHelper);
+  }
 }

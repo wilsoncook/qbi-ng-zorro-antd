@@ -28,7 +28,7 @@ There are four kinds of picker:
 - nz-range-picker
 - nz-week-picker
 
-**Note: ** All input and output date objects are [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date), you can manpulate it with [date-fns](https://date-fns.org/).
+**Note:** All input and output date objects are [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date), you can manpulate it with [date-fns](https://date-fns.org/).
 
 ### Common API
 
@@ -54,13 +54,13 @@ The following APIs are shared by nz-date-picker, nz-month-picker, nz-range-picke
 
 | Property | Description | Type | Default |
 | -------- | ----------- | ---- | ------- |
-| `[ngModel]` | Date | Date | - |
-| `[nzDisabledTime]` | to specify the time that cannot be selected | (current: Date) => { nzDisabledHours, nzDisabledMinutes, nzDisabledSeconds } | - |
-| `[nzFormat]` | to set the date format, refer to [DatePipe](https://angular.io/api/common/DatePipe) | string | "yyyy-MM-dd" |
-| `[nzRenderExtraFooter]` | render extra footer in panel | TemplateRef / string or () => TemplateRef / string | - |
-| `[nzShowTime]` | to provide an additional time selection | object / boolean | [TimePicker Options](/components/time-picker/en#api) |
-| `[nzShowToday]` | whether to show "Today" button | boolean | true |
-| `[nzPlaceHolder]` | placeholder of date input | string | - |
+| `[ngModel]` | Date | `Date` | - |
+| `[nzDisabledTime]` | to specify the time that cannot be selected | `(current: Date) => { nzDisabledHours, nzDisabledMinutes, nzDisabledSeconds }` | - |
+| `[nzFormat]` | to set the date format, see `nzFormat special instructions` | `string` | `"yyyy-MM-DD"` |
+| `[nzRenderExtraFooter]` | render extra footer in panel | `TemplateRef｜string｜(() => TemplateRef｜string)` | - |
+| `[nzShowTime]` | to provide an additional time selection | `object｜boolean` | [TimePicker Options](/components/time-picker/en#api) |
+| `[nzShowToday]` | whether to show "Today" button | `boolean` | `true` |
+| `[nzPlaceHolder]` | placeholder of date input | `string` | - |
 | `(nzOnOk)` | callback when click ok button | `EventEmitter<Date>` | - |
 | `(ngModelChange)` | Date change callback | `EventEmitter<Date>` | - |
 
@@ -68,43 +68,47 @@ The following APIs are shared by nz-date-picker, nz-month-picker, nz-range-picke
 
 | Property | Description | Type | Default |
 | -------- | ----------- | ---- | ------- |
-| `[ngModel]` | Date | Date | - |
-| `[nzFormat]` | to set the date format, refer to [DatePipe](https://angular.io/api/common/DatePipe) | string | "yyyy" |
-| `[nzRenderExtraFooter]` | render extra footer in panel | TemplateRef / string or () => TemplateRef / string | - |
-| `[nzPlaceHolder]` | placeholder of date input | string | - |
+| `[ngModel]` | Date | `Date` | - |
+| `[nzFormat]` | to set the date format, see `nzFormat special instructions` | `string` | `"yyyy"` |
+| `[nzRenderExtraFooter]` | render extra footer in panel | `TemplateRef｜string｜(() => TemplateRef｜string)` | - |
+| `[nzPlaceHolder]` | placeholder of date input | `string` | - |
 | `(ngModelChange)` | Date change callback | `EventEmitter<Date>` | - |
 
 ### nz-month-picker
 
 | Property | Description | Type | Default |
 | -------- | ----------- | ---- | ------- |
-| `[ngModel]` | Date | Date | - |
-| `[nzFormat]` | to set the date format, refer to [DatePipe](https://angular.io/api/common/DatePipe) | string | "yyyy-MM" |
-| `[nzRenderExtraFooter]` | render extra footer in panel | TemplateRef / string or () => TemplateRef / string | - |
-| `[nzPlaceHolder]` | placeholder of date input | string | - |
+| `[ngModel]` | Date | `Date` | - |
+| `[nzFormat]` | to set the date format, see `nzFormat special instructions` | `string` | `"yyyy-MM"` |
+| `[nzRenderExtraFooter]` | render extra footer in panel | `TemplateRef｜string｜(() => TemplateRef｜string)` | - |
+| `[nzPlaceHolder]` | placeholder of date input | `string` | - |
 | `(ngModelChange)` | Date change callback | `EventEmitter<Date>` | - |
 
 ### nz-week-picker
 
 | Property | Description | Type | Default |
 | -------- | ----------- | ---- | ------- |
-| `[ngModel]` | Date | Date | - |
-| `[nzFormat]` | to set the date format, refer to [DatePipe](https://angular.io/api/common/DatePipe) | string | "yyyy-ww" |
-| `[nzPlaceHolder]` | placeholder of date input | string | - |
+| `[ngModel]` | Date | `Date` | - |
+| `[nzFormat]` | to set the date format, see `nzFormat special instructions` | `string` | `"yyyy-ww"` |
+| `[nzPlaceHolder]` | placeholder of date input | `string` | - |
 | `(ngModelChange)` | Date change callback | `EventEmitter<Date>` | - |
 
 ### nz-range-picker
 
 | Property | Description | Type | Default |
 | -------- | ----------- | ---- | ------- |
-| `[ngModel]` | Date | Date[] | - |
-| `[nzDisabledTime]` | to specify the time that cannot be selected | (current: Date, partial: 'start' / 'end') => { nzDisabledHours, nzDisabledMinutes, nzDisabledSeconds } | - |
-| `[nzFormat]` | to set the date format | string | "yyyy-MM-dd" |
-| `[nzRanges]` | preseted ranges for quick selection | { [ key: string ]: Date[] } | - |
-| `[nzRenderExtraFooter]` | render extra footer in panel | TemplateRef / string or () => TemplateRef / string | - |
-| `[nzShowTime]` | to provide an additional time selection | object / boolean | [TimePicker Options](/components/time-picker/en#api) |
-| `[nzPlaceHolder]` | placeholder of date input | string[] | - |
+| `[ngModel]` | Date | `Date[]` | - |
+| `[nzDisabledTime]` | to specify the time that cannot be selected | `(current: Date, partial: 'start'｜'end') => { nzDisabledHours, nzDisabledMinutes, nzDisabledSeconds }` | - |
+| `[nzFormat]` | to set the date format, see `nzFormat special instructions` | `string` | `"yyyy-MM-dd"` |
+| `[nzRanges]` | preseted ranges for quick selection | `{ [ key: string ]: Date[] }` | - |
+| `[nzRenderExtraFooter]` | render extra footer in panel | `TemplateRef｜string｜(() => TemplateRef｜string)` | - |
+| `[nzShowTime]` | to provide an additional time selection | `object｜boolean` | [TimePicker Options](/components/time-picker/en#api) |
+| `[nzPlaceHolder]` | placeholder of date input | `string[]` | - |
 | `(nzOnOk)` | click ok callback | `EventEmitter<Date[]>` | - |
 | `(ngModelChange)` | Date change callback | `EventEmitter<Date[]>` | - |
 
 > Currently supported `nz-time-picker` parameters in `nzShowTime` are: `nzFormat`, `nzHourStep`, `nzMinuteStep`, `nzSecondStep`, `nzDisabledHours`, `nzDisabledMinutes`, `nzDisabledSeconds`, `nzHideDisabledOptions`, `nzDefaultOpenValue`, `nzAddOn`
+
+### nzFormat special instructions
+
+Date formatting currently supports two methods: `DatePipe` (default, [syntax reference](https://angular.io/api/common/DatePipe)) and `Date-fns` ([syntax reference](https://date-fns.org/docs/format#description), see [`How to format a date using Date-fns`](/docs/i18n/en#How%20to%20format%20a%20date%20using%20Date-fns)).

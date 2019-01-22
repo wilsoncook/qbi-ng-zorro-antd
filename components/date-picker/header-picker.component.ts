@@ -1,7 +1,8 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges, TemplateRef } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges, TemplateRef } from '@angular/core';
 
 import { FunctionProp } from '../core/types/common-wrap';
 import { valueFunctionProp } from '../core/util/convert';
+import { DateHelperService } from '../i18n/date-helper.service';
 import { NzI18nService } from '../i18n/nz-i18n.service';
 import { AbstractPickerComponent } from './abstract-picker.component';
 import { CandyDate } from './lib/candy-date';
@@ -27,8 +28,8 @@ export class HeaderPickerComponent extends AbstractPickerComponent implements On
 
   private supportPanels: PanelMode[];
 
-  constructor(i18n: NzI18nService) {
-    super(i18n);
+  constructor(i18n: NzI18nService, cdr: ChangeDetectorRef, dateHelper: DateHelperService) {
+    super(i18n, cdr, dateHelper);
   }
 
   ngOnInit(): void {
