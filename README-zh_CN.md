@@ -1,3 +1,15 @@
+# 这是NG-ZORRO针对QBI的定制版（基于v1.6.0）
+
+## 发布方式
+- 修改代码后，发布到github（[https://github.com/wilsoncook/qbi-ng-zorro-antd](https://github.com/wilsoncook/qbi-ng-zorro-antd)）:   
+  `npm run release`
+- 到[https://github.com/wilsoncook/qbi-ng-zorro-antd](https://github.com/wilsoncook/qbi-ng-zorro-antd)合并PR
+- 拷贝代码到外部仓库（[https://gitee.com/wilsoncook/ng-zorro-antd-release](https://gitee.com/wilsoncook/ng-zorro-antd-release)）:  
+  `rm -rf [外部仓库路径]/* && cp -R ./publish/* [外部仓库路径]/`（如: `rm -rf ../qbi-ng-zorro-antd-release/* && cp -R ./publish/* ../qbi-ng-zorro-antd-release/`）
+- 到外部仓库提交并打标签  
+  `cd [外部仓库路径] && git add --all && git commit -m "release(v1.6.?): [修复内容]" && git tag v1.6.? && git push && git push --tags && cd -`（如: `cd ../qbi-ng-zorro-antd-release && git add --all && git commit -m "release(v1.6.?): 修复???" && git tag v1.6.? && git push && git push --tags && cd -`）
+- 更改QBI项目中package.json对应版本号
+
 <p align="center">
   <a href="http://ng.ant.design">
     <img width="230" src="https://img.alicdn.com/tfs/TB1FVMDosrI8KJjy0FhXXbfnpXa-200-200.svg">
