@@ -29,7 +29,7 @@ let nextVersion;
 
 fetchOlderVersions();
 changeVersion();
-generatingPublishNote();
+// generatingPublishNote();
 preRelease();
 checkout();
 
