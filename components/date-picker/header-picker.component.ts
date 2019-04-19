@@ -26,6 +26,16 @@ export class HeaderPickerComponent extends AbstractPickerComponent implements On
   panelMode: PanelMode; // Current panel mode
   extraFooter: TemplateRef<void> | string;
 
+  /** Using nzDisabledDate when it's a year-picker */
+  get disabledYear(): ((d: Date) => boolean) {
+    return this.endPanelMode === 'year' ? this.nzDisabledDate : null;
+  }
+
+  /** Using nzDisabledDate when it's a month-picker */
+  get disabledMonth(): ((d: Date) => boolean) {
+    return this.endPanelMode === 'month' ? this.nzDisabledDate : null;
+  }
+
   private supportPanels: PanelMode[];
 
   constructor(i18n: NzI18nService, cdr: ChangeDetectorRef, dateHelper: DateHelperService) {
