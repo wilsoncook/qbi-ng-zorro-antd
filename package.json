@@ -18,6 +18,7 @@
     "helper": "bash ./release-helper.sh",
     "migration-styles": "node build_scripts/migration-styles.js",
     "generate": "ng build ng-zorro-antd-lib",
+    "postgenerate": "node ./build_scripts/generate-less.js && cp README.md publish/README.md && npm run migration-styles",
     "pre-release": "npm run generate",
     "test": "ng test --watch=false --code-coverage",
     "integration": "npm run generate && bash ./integration-test.sh",
